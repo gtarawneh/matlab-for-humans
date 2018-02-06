@@ -7,17 +7,17 @@ n = length(m);
 varargout = cell(nargout, 1);
 
 for i=1:nargout
-    
+
     if i <= n
-    
-        varargout{i} = m(i);
-        
+
+        if iscell(m); varargout{i} = m{i}; else varargout{i} = m(i); end
+
     else
-        
-        varargout{i} = [];
-        
+
+        if iscell(m); varargout{i} = m(i); else varargout{i} = []; end
+
     end
-    
+
 end
 
 end
